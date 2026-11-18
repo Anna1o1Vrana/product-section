@@ -163,7 +163,7 @@ button:disabled {
   align-items: start;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .product {
     grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.92fr);
     gap: 40px 56px;
@@ -351,6 +351,8 @@ button:disabled {
   align-items: baseline;
   gap: 8px 12px;
   margin: 0;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 16px;
 }
 
 .product-info__price p {
@@ -394,7 +396,7 @@ button:disabled {
   text-transform: uppercase;
 }
 
-#selected-color-name {
+.product-options__selected-color-name {
   color: var(--text);
   font-weight: 650;
   letter-spacing: 0;
@@ -488,8 +490,9 @@ button:disabled {
 .product-options__size:disabled::after {
   position: absolute;
   top: 50%;
-  right: 10px;
-  left: 10px;
+  right: 5px;
+  left: 5px;
+  transform: rotate(-35deg);
   height: 1px;
   background: #d0d3d8;
   content: "";
@@ -498,15 +501,25 @@ button:disabled {
 /* Size guide trigger */
 
 .product-options__size-guide {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3px;
   margin-top: 10px;
   padding: 4px 0;
   border: 0;
   background: none;
   color: var(--blue);
   font-size: 14px;
+}
+
+.product-options__size-guide-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.product-options__size-guide path {
+  stroke: var(--blue);
 }
 
 .product-options__size-guide:hover {
@@ -536,7 +549,8 @@ button:disabled {
 .product-purchase__quantity-button {
   width: 40px;
   height: 42px;
-  border: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
   background: #fff;
   font-size: 20px;
   line-height: 1;
@@ -550,8 +564,8 @@ button:disabled {
   color: #c5c8ce;
 }
 
-#quantity-value {
-  min-width: 1.5rem;
+.product-purchase__quantity-value {
+  min-width: 2.5rem;
   text-align: center;
   font-variant-numeric: tabular-nums;
 }
@@ -561,6 +575,17 @@ button:disabled {
   color: var(--green);
   font-size: 14px;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.product-purchase__stock-icon {
+  width: 16px;
+  height: 16px;
+  fill: var(--green);
+  
 }
 
 /* ========================================
@@ -624,15 +649,27 @@ button:disabled {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  color: #374151;
+  color: var(--text);
   font-size: 14px;
 }
 
-.product-benefits__item span {
-  flex: 0 0 auto;
-  width: 1.25em;
-  color: var(--muted);
-  text-align: center;
+.product-benefits__icon {
+  width: 16px;
+  height: 16px;
+}
+
+.product-benefits__icon-text {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.product-benefits__icon--star {
+  fill: var(--text);
+}
+
+.product-benefits__icon--warranty {
+  stroke: var(--text);
 }
 
 /* ========================================
@@ -693,7 +730,7 @@ button:disabled {
 
 .size-guide {
   position: fixed;
-  width: min(640px, calc(100vw - 32px));
+  width: min(440px, calc(100vw - 32px));
   max-height: calc(100dvh - 32px);
   margin: auto;
   padding: 0;
@@ -755,7 +792,7 @@ button:disabled {
 
 .size-guide__table {
   width: 100%;
-  min-width: 520px;
+  min-width: min-content;
   border-collapse: collapse;
   font-size: 14px;
 }
@@ -837,4 +874,8 @@ button:disabled {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.disabled-scroll {
+  overflow: hidden;
 }

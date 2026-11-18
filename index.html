@@ -190,7 +190,7 @@
       <!-- Color options -->
       <fieldset class="product-options product-options--color">
         <legend class="product-options__legend">
-          Color — <span id="selected-color-name" data-js="selected-color-name">Midnight blue</span>
+          Color — <span id="selected-color-name" class="product-options__selected-color-name" data-js="selected-color-name">Midnight blue</span>
         </legend>
 
         <div class="product-options__list" data-js="color-options">
@@ -282,7 +282,9 @@
           data-js="size-guide-trigger"
           type="button"
         >
-          <span aria-hidden="true">↗</span> Size guide
+          <span aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="product-options__size-guide-icon" fill="none" viewBox="0 0 24 24"><path stroke="#1c274c" stroke-linecap="round" stroke-width="1.5" d="M12 9h-1c-.943 0-1.414 0-1.707.293S9 10.057 9 11v7.5c0 1.404 0 2.107-.337 2.611a2 2 0 0 1-.552.552C7.607 22 6.904 22 5.5 22s-2.107 0-2.611-.337a2 2 0 0 1-.552-.552C2 20.607 2 19.904 2 18.5V6c0-1.886 0-2.828.586-3.414S4.114 2 6 2h12.5c1.404 0 2.107 0 2.611.337a2 2 0 0 1 .552.552C22 3.393 22 4.096 22 5.5s0 2.107-.337 2.611a2 2 0 0 1-.552.552C20.607 9 19.904 9 18.5 9H16M12 2v2m6-2v2M9 2v3m6-3v3M2 12h2m-2 6h2m-2-3h3M2 9h3"/></svg>
+          </span> Size guide
         </button>
       </fieldset>
 
@@ -303,7 +305,7 @@
             −
           </button>
 
-          <output id="quantity-value" data-js="quantity-value" aria-live="polite">1</output>
+          <output id="quantity-value" data-js="quantity-value" aria-live="polite" class="product-purchase__quantity-value">1</output>
 
           <button
             type="button"
@@ -317,8 +319,18 @@
         </div>
 
         <p class="product-purchase__stock">
-          <span aria-hidden="true">◉</span> Only 4 left in stock
-        </p>
+            <svg
+              class="product-purchase__stock-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 400 400"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M199.996 0C89.713 0 0 89.72 0 200s89.713 200 199.996 200S400 310.28 400 200 310.279 0 199.996 0m0 373.77C104.18 373.77 26.23 295.816 26.23 200S104.179 26.231 199.996 26.231 373.767 104.184 373.767 200c.001 95.816-77.955 173.77-173.771 173.77" />
+              <path d="M272.406 134.526 169.275 237.652l-41.689-41.68c-5.123-5.117-13.422-5.12-18.545.003-5.125 5.125-5.125 13.425 0 18.548l50.963 50.955c2.561 2.558 5.916 3.838 9.271 3.838s6.719-1.28 9.279-3.842c.008-.011.014-.022.027-.035L290.95 153.071c5.125-5.12 5.125-13.426 0-18.546-5.122-5.123-13.427-5.123-18.544.001" />
+            </svg>
+            <span>Only 4 left in stock</span>
+          </p>
       </div>
 
       <!-- Purchase actions -->
@@ -351,9 +363,61 @@
       ></p>
 
       <ul class="product-benefits" aria-label="Shopping benefits">
-        <li class="product-benefits__item"><span aria-hidden="true">♧</span> Free delivery on orders over $60</li>
-        <li class="product-benefits__item"><span aria-hidden="true">↻</span> 30-day returns — free &amp; easy</li>
-        <li class="product-benefits__item"><span aria-hidden="true">♢</span> 2-year warranty included</li>
+        <li class="product-benefits__item">
+          <svg
+            class="product-benefits__icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M2 3V1.75C1.30964 1.75.75 2.30964.75 3L2 3ZM13 3h1.25c0-.69036-.5596-1.25-1.25-1.25V3ZM13 9V7.75c-.3315 0-.6495.1317-.8839.3661-.2344.2345-.3661.5524-.3661.8839H13ZM2 4.25h11v-2.5H2v2.5ZM11.75 3v16h2.5V3h-2.5ZM3.25 17V3H.75v14h2.5ZM13 10.25h5v-2.5h-5v2.5Zm7.75 2.75v4h2.5v-4h-2.5Zm-6.5 6V9h-2.5v10h2.5Zm4.2803.5303a.75.75 0 0 1-1.0606 0l-1.7678 1.7678c1.2692 1.2692 3.327 1.2692 4.5962 0l-1.7678-1.7678Zm-1.0606-1.0606a.75.75 0 0 1 1.0606 0l1.7678-1.7678c-1.2692-1.2692-3.327-1.2692-4.5962 0l1.7678 1.7678ZM6.5303 19.5303a.75.75 0 0 1-1.0606 0l-1.7678 1.7678c1.2692 1.2692 3.327 1.2692 4.5962 0l-1.7678-1.7678Zm-1.0606-1.0606a.75.75 0 0 1 1.0606 0l1.7678-1.7678c-1.2692-1.2692-3.327-1.2692-4.5962 0l1.7678 1.7678ZM18.5303 18.4697c.1467.1467.2197.3364.2197.5303h2.5c0-.8298-.3175-1.6637-.9519-2.2981l-1.7678 1.7678ZM18.75 19c0 .1939-.073.3836-.2197.5303l1.7678 1.7678c.6344-.6344.9519-1.4683.9519-2.2981h-2.5ZM16 17.75h-3v2.5h3v-2.5Zm1.4697 1.7803c-.1467-.1467-.2197-.3364-.2197-.5303h-2.5c0 .8298.3175 1.6637.9519 2.2981l1.7678-1.7678ZM17.25 19c0-.1939.073-.3836.2197-.5303l-1.7678-1.7678c-.6344.6344-.9519 1.4683-.9519 2.2981h2.5ZM5.4697 19.5303c-.1467-.1467-.2197-.3364-.2197-.5303h-2.5c0 .8298.3175 1.6637.9519 2.2981l1.7678-1.7678ZM5.25 19c0-.1939.073-.3836.2197-.5303l-1.7678-1.7678c-.6344.6344-.9519 1.4683-.9519 2.2981h2.5ZM13 17.75H8v2.5h5v-2.5Zm-6.4697.7197c.1467.1467.2197.3364.2197.5303h2.5c0-.8298-.3175-1.6637-.9519-2.2981l-1.7678 1.7678ZM6.75 19c0-.1939.073-.3836.2197-.5303l-1.7678-1.7678c-.6344.6344-.9519 1.4683-.9519 2.2981h2.5ZM20.75 17c0 .4142-.3358.75-.75.75v2.5c1.7949 0 3.25-1.4551 3.25-3.25h-2.5ZM18 10.25c1.5188 0 2.75 1.2312 2.75 2.75h2.5c0-2.8995-2.3505-5.25-5.25-5.25v2.5ZM.75 17c0 1.7949 1.45507 3.25 3.25 3.25v-2.5c-.41421 0-.75-.3358-.75-.75H.75Z"
+              fill="currentColor"
+            />
+          </svg>
+          <span class="product-benefits__icon-text"><b>Free delivery</b> on orders over $60</span>
+        </li>
+      
+        <li class="product-benefits__item">
+          <svg
+            class="product-benefits__icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 495.099 495.099"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M203.82 1.475a4.32 4.32 0 0 0-.328 5.247l28.608 42.45C129.497 57.098 48.389 142.944 48.389 247.546c0 59.917 26.716 113.6 68.714 150.149 3.524-4.587 7.842-8.597 13.274-11.282l34.04-16.833c-38.96-26.623-64.605-71.382-64.605-122.034 0-75.819 57.44-138.424 131.083-146.733l-27.394 40.658a4.306 4.306 0 0 0 .327 5.249 4.31 4.31 0 0 0 5.154 1.028c35.723-17.665 103.131-51.013 135.047-66.803 5.734-2.837 5.722-11.012-.013-13.846C251.808 21.533 268.901 30.062 208.975.446a4.31 4.31 0 0 0-5.155 1.029M446.71 247.546c0-59.758-26.582-113.314-68.403-149.856-3.507 4.494-7.734 8.445-12.957 10.998l-34.415 17.015c38.817 26.649 64.353 71.309 64.353 121.844 0 75.585-57.089 138.005-130.397 146.634l27.335-40.551a4.32 4.32 0 0 0-.326-5.248 4.32 4.32 0 0 0-5.156-1.028c-51.816 25.61-17.87 8.829-141.178 69.776a4.31 4.31 0 0 0-2.401 3.867v.007c0 1.65.929 3.139 2.401 3.858 0 0 95.723 47.322 141.169 69.794a4.32 4.32 0 0 0 5.156-1.028 4.305 4.305 0 0 0 .326-5.249l-28.615-42.475c102.317-8.237 183.108-93.958 183.108-198.358"
+              fill="currentColor"
+            />
+          </svg>
+          <span class="product-benefits__icon-text"><b>30-day returns</b> — free &amp; easy</span>
+        </li>
+      
+        <li class="product-benefits__item">
+          <svg
+            class="product-benefits__icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 25 24.5"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M10.46 1.507a2 2 0 0 1 3.084 0l1.2 1.453a2 2 0 0 0 1.735.717l1.878-.182A2 2 0 0 1 20.54 5.68l-.18 1.851a2 2 0 0 0 .722 1.741l1.441 1.181a2 2 0 0 1 0 3.094l-1.44 1.18a2 2 0 0 0-.723 1.742l.18 1.851a2 2 0 0 1-2.183 2.185l-1.878-.182a2 2 0 0 0-1.734.717l-1.2 1.453a2 2 0 0 1-3.084 0l-1.2-1.453a2 2 0 0 0-1.735-.717l-1.878.182a2 2 0 0 1-2.183-2.185l.18-1.851a2 2 0 0 0-.722-1.741l-1.44-1.181a2 2 0 0 1 0-3.094l1.44-1.18a2 2 0 0 0 .723-1.742l-.18-1.851a2 2 0 0 1 2.182-2.185l1.878.182a2 2 0 0 0 1.735-.717z"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+            <path
+              d="m8.125 12.773 2.289 2.279a1 1 0 0 0 1.504-.107l3.962-5.262"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+          <span class="product-benefits__icon-text"><b>2-year warranty</b> included</span>
+        </li>
       </ul>
     </div>
   </section>

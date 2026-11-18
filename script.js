@@ -653,6 +653,7 @@
       : '';
 
     function openDialog() {
+      document.body.classList.add('disabled-scroll');
       const size = selectedSizeLabel();
 
       if (description) {
@@ -674,6 +675,7 @@
     }
 
     function closeDialog() {
+      document.body.classList.remove('disabled-scroll');
       if (dialog.open) dialog.close();
     }
 
